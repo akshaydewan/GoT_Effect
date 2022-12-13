@@ -38,8 +38,9 @@ if __name__ == "__main__":
             "frightening IS NULL AND " \
             "profanity IS NULL AND " \
             "alcohol IS NULL " \
-            "LIMIT 200"
+            "LIMIT 1000"
     result_set = cur.execute(query).fetchall()
+    print(str(len(result_set)) + ' advisories to be populated')
     for title in result_set:
         print(title[0])
         populate_advisory(title[0], ia, cur)
